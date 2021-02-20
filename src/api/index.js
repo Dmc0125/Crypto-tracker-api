@@ -1,27 +1,15 @@
 const express = require('express');
-const volleyball = require('volleyball');
-const helmet = require('helmet');
-const cors = require('cors');
 
-const middlewares = require('../middlewares');
-const api = require('./app');
+const currencies = require('./currencies');
 
-const app = express();
+const router = express.Router();
 
-app.use(volleyball);
-app.use(helmet());
-app.use(cors());
-app.use(express.json());
-
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.json({
-    message: 'Crypto tracker API',
+    message: 'Coinmarketcap proxy API',
   });
 });
 
-app.use('/api', api);
+router.use(currencies.path, currencies.router);
 
-app.use(middlewares.notFound);
-app.use(middlewares.errorHandler);
-
-module.exports = app;
+module.exports = router;
