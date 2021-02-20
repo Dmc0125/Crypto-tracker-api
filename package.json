@@ -1,0 +1,35 @@
+{
+  "name": "coinmarketcap-proxy",
+  "version": "0.2.0",
+  "description": "Simple proxy for coinmarketcap API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "lint": "eslint --fix src",
+    "test": "mocha --exit"
+  },
+  "keywords": [],
+  "author": "Dominik Michal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmc0125/coinmarketcap-proxy.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "monk": "^7.3.3",
+    "node-fetch": "^2.6.1",
+    "uuid": "^8.3.2",
+    "volleyball": "^1.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  }
+}
