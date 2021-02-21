@@ -50,11 +50,11 @@ const filterPairs = (currencies) => {
         logo: `${LOGO_URL}${logoSymbol.toLowerCase()}.svg`,
         id: uuidv4(),
         [`${symbolQuote.toLowerCase()}Data`]: {
-          marketPair: `${symbol}/${symbolQuote}`,
           symbolQuote,
-          priceChange,
-          priceChangePercent,
-          price: lastPrice,
+          marketPair: `${symbol}/${symbolQuote}`,
+          priceChange: Number(priceChange),
+          priceChangePercent: Number(priceChangePercent),
+          price: Number(lastPrice),
         },
       };
 
@@ -64,11 +64,11 @@ const filterPairs = (currencies) => {
     acc[symbol] = {
       ...acc[symbol],
       [`${symbolQuote.toLowerCase()}Data`]: {
-        marketPair: `${symbol}/${symbolQuote}`,
         symbolQuote,
-        priceChange,
-        priceChangePercent,
-        price: lastPrice,
+        marketPair: `${symbol}/${symbolQuote}`,
+        priceChange: Number(priceChange),
+        priceChangePercent: Number(priceChangePercent),
+        price: Number(lastPrice),
       },
     };
 
