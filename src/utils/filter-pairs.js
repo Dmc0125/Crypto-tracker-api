@@ -8,11 +8,8 @@ const getSymbols = (marketPair) => {
     marketPair.slice(i),
   ]);
 
-  if (
-    marketPair.endsWith('USD')
-    || marketPair.endsWith('GUSD')
-  ) {
-    return 0;
+  if (marketPair.endsWith('UPUSDT') || marketPair.endsWith('DOWNUSDT')) {
+    return [];
   }
 
   if (marketPair.endsWith('USDT')) {
@@ -37,6 +34,10 @@ const filterPairs = (currencies) => {
     }
 
     const [symbol, symbolQuote] = symbols;
+
+    if (symbol.endsWith('UP') || symbol.endsWith('DOWN')) {
+      console.log(symbol, symbolQuote);
+    }
 
     let logoSymbol = symbol;
 
