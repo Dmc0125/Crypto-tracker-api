@@ -1,6 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 
 const LOGO_URL = 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@9ab8d6934b83a4aa8ae5e8711609a70ca0ab1b2b/svg/icon/';
+const LOGO_URL_2 = 'https://cryptofonts.com/img/icons/';
 
 const getSymbols = (marketPair) => {
   const sliceSymbols = (i) => ([
@@ -35,10 +36,6 @@ const filterPairs = (currencies) => {
 
     const [symbol, symbolQuote] = symbols;
 
-    if (symbol.endsWith('UP') || symbol.endsWith('DOWN')) {
-      console.log(symbol, symbolQuote);
-    }
-
     let logoSymbol = symbol;
 
     if (symbol === 'IOTA') {
@@ -49,6 +46,7 @@ const filterPairs = (currencies) => {
       acc[symbol] = {
         symbol,
         logo: `${LOGO_URL}${logoSymbol.toLowerCase()}.svg`,
+        logo_2: `${LOGO_URL_2}${logoSymbol.toLowerCase()}.svg`,
         id: uuidv4(),
         [`${symbolQuote.toLowerCase()}Data`]: {
           symbolQuote,
