@@ -58,7 +58,6 @@ const filterPairs = (currencies) => {
           price: Number(lastPrice),
         },
       };
-
       return acc;
     }
 
@@ -75,6 +74,17 @@ const filterPairs = (currencies) => {
 
     return acc;
   }, {});
+
+  btcAndUsdPairs.BTC = {
+    ...btcAndUsdPairs.BTC,
+    btcData: {
+      symbolQuote: 'BTC',
+      marketPair: 'BTC/BTC',
+      priceChange: 0,
+      priceChangePercent: 0,
+      price: 1,
+    },
+  };
 
   return btcAndUsdPairs;
 };
